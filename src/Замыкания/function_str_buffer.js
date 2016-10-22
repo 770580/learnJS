@@ -2,7 +2,7 @@
 function makeBuffer(){
   let str = '';
   return function(value){
-    if(value == undefined) {
+    if(value === undefined) {
       return str;
     }
     else {

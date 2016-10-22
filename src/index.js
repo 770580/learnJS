@@ -1,24 +1,20 @@
 'use strict';
-function makeBuffer(){
-  let str = '';
-  return function(value){
-    if(value == undefined) {
-      return str;
-    }
-    else {
-      str += value;
-    }
+function makeArmy() {
+
+  var shooters = [];
+
+  for (var i = 0; i < 10; i++) {
+    var shooter = function() { // функция-стрелок
+      alert(i); // выводит свой номер
+    };
+    shooters.push(shooter);
   }
+
+  return shooters;
 }
 
-let buffer = makeBuffer();
+var army = makeArmy();
 
-// добавить значения к буферу
-buffer('Замыкания');
-buffer(' Использовать');
-buffer(' Нужно!');
+army[0](); // стрелок выводит 10, а должен 0
 
-// получить текущее значение
-alert( buffer() ); // Замыкания Использовать Нужно!
-
-module.hot.accept(); 
+module.hot.accept();
