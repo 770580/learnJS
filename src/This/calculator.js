@@ -1,4 +1,3 @@
-'use strict';
 let calculator = {
   read: function() {
     this.a = +prompt('a?', 0);
@@ -11,9 +10,3 @@ let calculator = {
     return this.b * this.b;
   }
 };
-
-console.log(calculator.read());
-console.log(calculator.sum());
-console.log(calculator.mul());
-
-module.hot.accept();
