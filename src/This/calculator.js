@@ -7,6 +7,6 @@ let calculator = {
     return this.a + this.b;
   },
   mul: function() {
-    return this.b * this.b;
+    return this.a * this.b;
   }
 };

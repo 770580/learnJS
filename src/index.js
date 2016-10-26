@@ -1,19 +1,15 @@
 'use strict';
-let calculator = {
-  read: function() {
-    this.a = +prompt('a?', 0);
-    this.b = +prompt('b?', 0);
-  },
-  sum: function() {
-    return this.a + this.b;
-  },
-  mul: function() {
-    return this.b * this.b;
-  }
-};
+function Accumulator(startingValue) {
+  this.value = startingValue;
+  this.read = function(){
+    let val = +prompt('val', 0);
+    this.value += val;
+  };
+}
 
-console.log(calculator.read());
-console.log(calculator.sum());
-console.log(calculator.mul());
+var accumulator = new Accumulator(1); // начальное значение 1
+accumulator.read(); // прибавит ввод prompt к текущему значению
+accumulator.read(); // прибавит ввод prompt к текущему значению
+alert( accumulator.value ); // выведет текущее значение
 
 module.hot.accept();
