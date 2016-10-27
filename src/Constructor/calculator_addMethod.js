@@ -15,6 +15,8 @@ function Calculator() {
   }
 
   this.addMethod = function(operand, func) {
-    operations[operand] = func;
+    if (operations.operand) {
+      operations[operand] = func;
+    }
   }
 }
