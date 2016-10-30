@@ -8,16 +8,3 @@ function makeCaching(f) {
     return cache[arg];
   }
 }
-
-function f(x) {
-  return Math.random() * x;
-}
-
-f = makeCaching(f);
-
-var a = f(1);
-var b = f(1);
-
-console.log(a == b);
-
-module.hot.accept();
