@@ -1,25 +1,22 @@
-const head = {
-  glasses: 1,
-};
+import './styles.css';
 
-const table = {
-  pen: 3,
-  __proto__: head,
-};
+const body = document.body;
+const table = document.createElement('table');
 
-const bed = {
-  sheet: 1,
-  pillow: 2,
-  __proto__: table,
-};
+const size = 6;
 
-const pockets = {
-  money: 2000,
-  __proto__: bed,
-};
+let counter = 1;
 
-console.log(pockets.pen);
-console.log(bed.glasses);
-console.log(table.money);
+body.appendChild(table);
+for (let i = 0; i < size; i += 1) {
+  const row = document.createElement('tr');
+  table.appendChild(row);
+  for (let j = 0; j < size; j += 1) {
+    const column = document.createElement('td');
+    column.innerHTML = `${counter}`;
+    row.appendChild(column);
+    counter += 1;
+  }
+}
 
 module.hot.accept();
