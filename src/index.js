@@ -22,22 +22,29 @@ function shuffle(tableArray) {
 }
 
 const body = document.body;
-const table = document.createElement('table');
+const container = document.createElement('div');
+container.classList.add('container');
 
 const size = 4;
-let tableArray = [];
+let gridItems = [];
 
 for (let i = 1; i < size ** 2; i += 1) {
-  tableArray.push(i);
+  gridItems.push(i);
 }
 
-tableArray = shuffle(tableArray);
-tableArray.push('');
+gridItems = shuffle(gridItems);
+gridItems.push('');
 
-let row;
+body.appendChild(container);
 
-body.appendChild(table);
-
+gridItems.forEach((item) => {
+  const gridItem = document.createElement('div');
+  gridItem.id = item;
+  gridItem.classList.add('gridItem');
+  gridItem.innerHTML = item;
+  container.appendChild(gridItem);
+});
+/*
 for (let i = 0; i < tableArray.length; i += 1) {
   if (i % size === 0) {
     row = document.createElement('tr');
@@ -48,6 +55,6 @@ for (let i = 0; i < tableArray.length; i += 1) {
   column.id = tableArray[i] === '' ? 'blank' : tableArray[i];
   row.appendChild(column);
 }
-
+*/
 
 module.hot.accept();
