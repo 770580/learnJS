@@ -1,25 +1,9 @@
-const head = {
-  glasses: 1,
-};
+import './styles.css';
+import Carousel from './carousel';
 
-const table = {
-  pen: 3,
-  __proto__: head,
-};
+const carousel = new Carousel(3);
 
-const bed = {
-  sheet: 1,
-  pillow: 2,
-  __proto__: table,
-};
 
-const pockets = {
-  money: 2000,
-  __proto__: bed,
-};
-
-console.log(pockets.pen);
-console.log(bed.glasses);
-console.log(table.money);
-
-module.hot.accept();
+document.querySelector('.right').addEventListener('click', carousel.next);
+document.querySelector('.left').addEventListener('click', carousel.prev);
+// module.hot.accept();

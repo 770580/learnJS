@@ -21,6 +21,22 @@ module.exports = {
       { test: /\.jsx?$/,
         loader: 'eslint',
         exclude: /node_modules/ }
+    ],
+    loaders: [
+      { 
+        test: /\.css$/,
+        exclude: /node_modules/,
+        loader:  "style-loader!css-loader"
+      },
+      {
+        loader: 'babel-loader',
+        test: /\.js?$/,
+        include: path.resolve(__dirname, "src"),
+        query: {
+          plugins: ['transform-runtime'],
+          presets: ['es2015', 'stage-0']
+        }
+      }
     ]
   },
   eslint: {
