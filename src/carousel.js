@@ -1,7 +1,9 @@
 class Carousel {
 
-  constructor(step) {
+  constructor(container, step, imgList) {
+    this.container = container;
     this.step = step;
+    this.imgList = imgList;
     this.items = [...(document.querySelectorAll('li'))];
     this.visibleIndex = 0;
     this.items.forEach((li, index) => {
@@ -11,6 +13,16 @@ class Carousel {
     this.next = this.next.bind(this);
     this.prev = this.prev.bind(this);
   }
+
+  render() {
+    const parentUl = document.createElement('ul');
+    this.container
+    this.imgList.slides.forEach((slide) => {
+      const template = `<li><img src=${slide.href}></li>`;
+
+    });
+  }
+
 
   redefining() {
     this.items.forEach((item, index) => {
